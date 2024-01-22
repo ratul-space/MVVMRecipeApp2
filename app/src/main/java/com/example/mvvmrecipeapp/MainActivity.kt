@@ -38,8 +38,12 @@ class MainActivity : ComponentActivity() {
                         .fillMaxWidth()
                         .height(200.dp)
                         .border(border = BorderStroke(width = 1.dp, color = Color.Black)),
-                    verticalArrangement = Arrangement.Center
+                    verticalArrangement = Arrangement.SpaceAround
                 ) {
+                    Text(
+                        text = "ITEM 1",
+                        Modifier.align(Alignment.CenterHorizontally)
+                    )
                     Text(
                         text = "ITEM 1",
                         Modifier.align(Alignment.CenterHorizontally)
@@ -50,7 +54,8 @@ class MainActivity : ComponentActivity() {
                     Modifier
                         .width(200.dp)
                         .height(200.dp)
-                        .border(border = BorderStroke(width = 1.dp, color = Color.Black))
+                        .border(border = BorderStroke(width = 1.dp, color = Color.Black)),
+                    horizontalArrangement = Arrangement.Center
                 ) {
                     Text(
                         text = "ITEM 2",
