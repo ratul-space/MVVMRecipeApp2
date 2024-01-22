@@ -8,6 +8,7 @@ import androidx.annotation.RequiresApi
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.border
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -36,7 +37,8 @@ class MainActivity : ComponentActivity() {
                     Modifier
                         .fillMaxWidth()
                         .height(200.dp)
-                        .border(border = BorderStroke(width = 1.dp, color = Color.Black))
+                        .border(border = BorderStroke(width = 1.dp, color = Color.Black)),
+                    verticalArrangement = Arrangement.Center
                 ) {
                     Text(
                         text = "ITEM 1",
