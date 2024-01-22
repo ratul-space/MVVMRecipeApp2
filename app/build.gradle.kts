@@ -67,5 +67,11 @@ dependencies {
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
 
+    // constraintlayout
     implementation("androidx.constraintlayout:constraintlayout:2.2.0-alpha13")
+
+    // appcompat
+    val appcompat_version = "1.6.1"
+    implementation("androidx.appcompat:appcompat:$appcompat_version")
+
 }
