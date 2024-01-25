@@ -1,4 +1,4 @@
-package com.example.mvvmrecipeapp
+package com.example.mvvmrecipeapp.network.model
 
 import com.google.gson.annotations.SerializedName
 
