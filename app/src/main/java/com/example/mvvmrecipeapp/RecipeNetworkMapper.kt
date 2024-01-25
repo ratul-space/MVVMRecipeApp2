@@ -1,6 +1,7 @@
 package com.example.mvvmrecipeapp
 
 import com.example.mvvmrecipeapp.domain.model.Recipe
+import com.example.mvvmrecipeapp.domain.util.EntityMapper
 
 class RecipeNetworkMapper : EntityMapper<RecipeNetworkEntity, Recipe> {
     override fun mapFromEntity(entity: RecipeNetworkEntity): Recipe {

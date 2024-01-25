@@ -1,4 +1,4 @@
-package com.example.mvvmrecipeapp
+package com.example.mvvmrecipeapp.domain.util
 
 interface EntityMapper<Entity, DomainModel>{
     fun mapFromEntity(entity: Entity): DomainModel
