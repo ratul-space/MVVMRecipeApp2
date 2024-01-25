@@ -1,33 +1,38 @@
 package com.example.mvvmrecipeapp
 
+import com.google.gson.annotations.SerializedName
+
 class RecipeNetworkEntity(
     @SerializedName("pk")
-    val pk: Int? = null
+    val pk: Int? = null,
 
     @SerializedName("title")
-    val title: String? = null
+    val title: String? = null,
+
+    @SerializedName("featured_image")
+    val featuredImage: String? = null,
 
     @SerializedName("publisher")
-    val publisher: String? = null
+    val publisher: String? = null,
 
     @SerializedName("rating")
-    val rating: Int? = null
+    val rating: Int? = null,
 
     @SerializedName("source_url")
-    val sourceUrl: String? = null
+    val sourceUrl: String? = null,
 
     @SerializedName("description")
-    val description: String? = null
+    val description: String? = null,
 
     @SerializedName("cocking_instructions")
-    val cockingInstructions: String? = null
+    val cockingInstructions: String? = null,
 
     @SerializedName("ingredients")
-    val ingredients: List<String>? = null
+    val ingredients: List<String>? = null,
 
     @SerializedName("date_added")
-    val dateAdded: String? = null
+    val dateAdded: String? = null,
 
     @SerializedName("date_updated")
-    val dateUpdated: String? = null
+    val dateUpdated: String? = null,
 )

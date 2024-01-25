@@ -1,6 +1,9 @@
 package com.example.mvvmrecipeapp
 
-@Percelize
-data class Recipe (
-    val id: Int
-): Percelable
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
+
+@Parcelize
+data class Recipe(
+    val id: Int,
+) : Parcelable
