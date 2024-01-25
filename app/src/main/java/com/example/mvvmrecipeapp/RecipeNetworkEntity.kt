@@ -2,9 +2,13 @@ package com.example.mvvmrecipeapp
 
 import com.google.gson.annotations.SerializedName
 
+
 class RecipeNetworkEntity(
     @SerializedName("pk")
     val pk: Int? = null,
+
+    @SerializedName("id")
+    val id: Int? = null,
 
     @SerializedName("title")
     val title: String? = null,
@@ -24,8 +28,8 @@ class RecipeNetworkEntity(
     @SerializedName("description")
     val description: String? = null,
 
-    @SerializedName("cocking_instructions")
-    val cockingInstructions: String? = null,
+    @SerializedName("cooking_instructions")
+    val cookingInstructions: String? = null,
 
     @SerializedName("ingredients")
     val ingredients: List<String>? = null,
