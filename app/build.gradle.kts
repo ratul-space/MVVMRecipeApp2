@@ -1,6 +1,7 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    id("kotlin.android.extensions")
 }
 
 android {
@@ -71,12 +72,16 @@ dependencies {
     implementation("androidx.constraintlayout:constraintlayout:2.2.0-alpha13")
 
     // appcompat
-    val appcompat_version = "1.6.1"
-    implementation("androidx.appcompat:appcompat:$appcompat_version")
+    val appcompatVersion = "1.6.1"
+    implementation("androidx.appcompat:appcompat:$appcompatVersion")
 
     // navigation
-    val nav_version = "2.7.6"
-    implementation("androidx.navigation:navigation-fragment-ktx:$nav_version")
-    implementation("androidx.navigation:navigation-ui-ktx:$nav_version")
+    val navVersion = "2.7.6"
+    implementation("androidx.navigation:navigation-fragment-ktx:$navVersion")
+    implementation("androidx.navigation:navigation-ui-ktx:$navVersion")
+    val retrofitVersion = "2.9.0"
+    implementation("com.squareup.retrofit2:retrofit:$retrofitVersion")
+    implementation("com.squareup.retrofit2:converter-gson:$retrofitVersion")
+
 
 }
