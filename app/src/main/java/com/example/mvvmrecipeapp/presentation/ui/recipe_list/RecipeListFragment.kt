@@ -1,4 +1,4 @@
-package com.example.mvvmrecipeapp
+package com.example.mvvmrecipeapp.presentation.ui.recipe_list
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -14,6 +14,7 @@ import androidx.compose.ui.platform.ComposeView
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.findNavController
+import com.example.mvvmrecipeapp.R
 
 class RecipeListFragment : androidx.fragment.app.Fragment() {
     override fun onCreateView(

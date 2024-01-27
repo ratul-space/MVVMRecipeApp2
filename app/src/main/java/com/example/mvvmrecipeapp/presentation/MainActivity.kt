@@ -1,15 +1,21 @@
-package com.example.mvvmrecipeapp
+package com.example.mvvmrecipeapp.presentation
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import retrofit2.Retrofit
+import com.example.mvvmrecipeapp.R
+import javax.inject.Inject
+
 
 class MainActivity : AppCompatActivity() {
+    @Inject
+    lateinit var someRandomString: String
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val service = Retrofit.Builder()
+
+
+//        val service = Retrofit.Builder()
 
 
 
