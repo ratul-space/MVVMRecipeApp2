@@ -1,5 +1,7 @@
 package com.example.mvvmrecipeapp.network.model
 
+import android.os.Parcel
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
 
 
@@ -39,4 +41,49 @@ data class RecipeDto(
 
     @SerializedName("date_updated")
     val dateUpdated: String? = null,
-)
+) : Parcelable {
+    constructor(parcel: Parcel) : this(
+        parcel.readValue(Int::class.java.classLoader) as? Int,
+        parcel.readValue(Int::class.java.classLoader) as? Int,
+        parcel.readString(),
+        parcel.readString(),
+        parcel.readString(),
+        parcel.readValue(Int::class.java.classLoader) as? Int,
+        parcel.readString(),
+        parcel.readString(),
+        parcel.readString(),
+        parcel.createStringArrayList(),
+        parcel.readString(),
+        parcel.readString()
+    ) {
+    }
+
+    override fun writeToParcel(parcel: Parcel, flags: Int) {
+        parcel.writeValue(pk)
+        parcel.writeValue(id)
+        parcel.writeString(title)
+        parcel.writeString(featuredImage)
+        parcel.writeString(publisher)
+        parcel.writeValue(rating)
+        parcel.writeString(sourceUrl)
+        parcel.writeString(description)
+        parcel.writeString(cookingInstructions)
+        parcel.writeStringList(ingredients)
+        parcel.writeString(dateAdded)
+        parcel.writeString(dateUpdated)
+    }
+
+    override fun describeContents(): Int {
+        return 0
+    }
+
+    companion object CREATOR : Parcelable.Creator<RecipeDto> {
+        override fun createFromParcel(parcel: Parcel): RecipeDto {
+            return RecipeDto(parcel)
+        }
+
+        override fun newArray(size: Int): Array<RecipeDto?> {
+            return arrayOfNulls(size)
+        }
+    }
+}
