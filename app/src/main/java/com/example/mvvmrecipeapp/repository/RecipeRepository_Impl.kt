@@ -3,8 +3,13 @@ package com.example.mvvmrecipeapp.repository
 import com.example.mvvmrecipeapp.domain.model.Recipe
 import com.example.mvvmrecipeapp.network.RecipeService
 import com.example.mvvmrecipeapp.network.model.RecipeDtoMapper
+import javax.inject.Inject
+import javax.inject.Singleton
 
-class RecipeRepository_Impl(
+@Singleton
+class RecipeRepository_Impl
+    @Inject
+    constructor(
     private val recipeService: RecipeService,
     private val mapper: RecipeDtoMapper,
 ) : RecipeRepository {
