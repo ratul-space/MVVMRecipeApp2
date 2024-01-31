@@ -10,6 +10,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.material3.Button
 import androidx.compose.material3.Text
 import androidx.compose.ui.Modifier
@@ -20,6 +21,7 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.findNavController
 import com.example.mvvmrecipeapp.R
 import com.example.mvvmrecipeapp.network.model.RecipeDtoMapper
+import com.example.mvvmrecipeapp.presentation.components.RecipeCard
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
@@ -41,13 +43,15 @@ class RecipeListFragment : androidx.fragment.app.Fragment() {
         return ComposeView(requireContext()).apply {
             setContent {
                 val recipes = viewModel.recipes.value
-                LazyColumn(
-
-                ) {
-
+                LazyColumn{
+                   itemsIndexed(items = recipes){
+                       index, recipe ->
+                       RecipeCard(recipe = recipe, onClick = {})
+                           
+                       }
+                   }
                 }
-
             }
         }
     }
-}
+
