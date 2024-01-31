@@ -1,3 +1,5 @@
+@file:Suppress("DEPRECATION")
+
 package com.example.mvvmrecipeapp.presentation.ui.recipe_list
 
 import androidx.compose.runtime.MutableState

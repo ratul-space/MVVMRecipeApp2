@@ -8,8 +8,8 @@ import javax.inject.Singleton
 
 @Singleton
 class RecipeRepository_Impl
-    @Inject
-    constructor(
+@Inject
+constructor(
     private val recipeService: RecipeService,
     private val mapper: RecipeDtoMapper,
 ) : RecipeRepository {
@@ -18,6 +18,6 @@ class RecipeRepository_Impl
     }
 
     override suspend fun get(token: String, id: Int): Recipe {
-        return mapper.mapToDomainModel(recipeService.get(token,id))
+        return mapper.mapToDomainModel(recipeService.get(token, id))
     }
 }

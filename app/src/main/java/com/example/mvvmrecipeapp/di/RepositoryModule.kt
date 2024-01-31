@@ -16,9 +16,9 @@ object RepositoryModule {
     @Singleton
     @Provides
     fun provideRecipeRepository(
-       recipeService : RecipeService,
-        recipeDtoMapper: RecipeDtoMapper
-    ): RecipeRepository{
+        recipeService: RecipeService,
+        recipeDtoMapper: RecipeDtoMapper,
+    ): RecipeRepository {
         return RecipeRepository_Impl(recipeService, recipeDtoMapper)
     }
 }
