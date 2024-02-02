@@ -8,7 +8,6 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.wrapContentWidth
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.MaterialTheme
@@ -16,11 +15,13 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.asImageBitmap
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import com.example.mvvmrecipeapp.R
 import com.example.mvvmrecipeapp.domain.model.Recipe
+import com.example.mvvmrecipeapp.domain.util.loadPicture
 
 
 @Composable
@@ -43,15 +44,14 @@ fun RecipeCard(
     ) {
         Column {
             recipe.featuredImage?.let { url ->
-                Image(
-                    painter = painterResource(id = R.drawable.img_pexels_jonathan_borba),
-                    contentDescription = null, // Set your content description appropriately
-                    modifier = Modifier
+                val image = loadPicture(url = url, defaultImage = R.drawable.img_empty_plate).value
+                image?.let { img ->
+                    Image(bitmap = img.asImageBitmap(), contentDescription = null)
+                    Modifier
                         .fillMaxWidth()
-                        .height(225.dp),
-                    contentScale = ContentScale.Crop
-                )
-
+                        .height(225.dp)
+                    ContentScale.Crop
+                }
             }
             recipe.title?.let { title ->
                 Row(

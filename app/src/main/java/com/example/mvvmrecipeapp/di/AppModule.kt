@@ -7,20 +7,19 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.internal.managers.ApplicationComponentManager
 import dagger.hilt.android.qualifiers.ApplicationContext
+import dagger.hilt.components.SingletonComponent
 import javax.inject.Singleton
 
-
 @Module
-@InstallIn(ApplicationComponentManager::class)
+@InstallIn(SingletonComponent::class) // Change this annotation
 object AppModule {
-    @Singleton
     @Provides
-    fun ProvideApplication(@ApplicationContext app: Context): BaseApplication {
+    fun provideApplication(@ApplicationContext app: Context): BaseApplication { // Change method name
         return app as BaseApplication
     }
-    @Singleton
+
     @Provides
-    fun ProvideRandomString(): String{
+    fun provideRandomString(): String { // Change method name
         return "HEY LOOK A RANDOM STRING!!! TIME TO EAT"
     }
 }

@@ -3,7 +3,7 @@ plugins {
     id("org.jetbrains.kotlin.android")
     kotlin("plugin.parcelize")
     kotlin("kapt")
-    id("com.google.dagger.hilt.android")
+    id("dagger.hilt.android.plugin")
 }
 
 android {
@@ -96,11 +96,12 @@ dependencies {
     kapt("com.google.dagger:hilt-compiler:2.50")
 
     implementation("androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha03")
-//    kapt("androidx.hilt:hilt-compiler:1.1.0")
+    kapt("androidx.hilt:hilt-compiler:1.1.0")
 
     // glide: An image loading and caching library for Android focused on smooth scrolling
     implementation("com.github.bumptech.glide:glide:4.16.0")
-
+    //noinspection KaptUsageInsteadOfKsp
+    kapt("com.github.bumptech.glide:compiler:4.16.0")
 
 }
 
